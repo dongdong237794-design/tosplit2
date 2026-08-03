@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media print {
+  /* Hide dynamic sandboxes, iframes, and non-printable headers */
+  #pdf-export-sandbox,
+  #pdf-vector-print-iframe,
+  iframe,
+  .no-print,
+  .no-print-header {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Safe A4 margins to prevent edge clipping */
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  /* Reset body and html layout */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all elements on page by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Make printable document container and all its children visible */
+  .pdf-print-target,
+  .pdf-print-target * {
+    visibility: visible !important;
+  }
+
+  /* Reset parent wrappers to prevent clipping, scrolling, auto-margins, or borders */
+  div:has(.pdf-print-target),
+  .pdf-print-target-wrapper {
+    position: static !important;
+    display: block !important;
+    flex: none !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Position printable target at top-left of printed page */
+  .pdf-print-target {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  /* Force exact A4 bounds and clean page breaks */
+  .pdf-a4-page {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 270mm !important;
+    height: auto !important;
+    margin: 0 0 0 0 !important;
+    padding: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .pdf-a4-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+
+  th, td {
+    vertical-align: middle !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+
+  th {
+    white-space: nowrap !important;
+  }
+}
+
