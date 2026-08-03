@@ -1,0 +1,6 @@
+{
+  "name": "Green Team Sports Portal",
+  "description": "ระบบจัดการทีมกีฬาสีเขียว เชื่อมต่อ Google Sheets และพร้อมสำหรับการใช้งาน",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
